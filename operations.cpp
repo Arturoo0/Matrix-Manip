@@ -13,7 +13,6 @@ namespace op {
         for (int r = 0; r < m1.getRows(); r++){
             std::vector<double> newCol;
             for (int c = 0; c < m1.getCols(); c++){
-                // std::cout << m1.matrix[r][c] << std::endl;
                 newCol.push_back(m1.matrix[r][c] + m2.matrix[r][c]);
             }
             vec.push_back(newCol);
