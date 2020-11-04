@@ -21,7 +21,7 @@ int main(){
     vect2 = {
         {1, 2, 3},
         {4, 5, 6},
-        {7, 8, 9}
+        {7, 8, 10}
     };
 
     Matrix v1 (vect1);
@@ -32,7 +32,7 @@ int main(){
 
     Matrix v3 = op::add(v1, v2);
     v3.printMatrix();
-
+ 
     Matrix v4 = op::subtract(v1, v2);
     v4.printMatrix();
 
