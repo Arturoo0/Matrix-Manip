@@ -15,14 +15,9 @@ int main(){
     std::vector<std::vector<double> > vect2 = {
         {1, 2, 3},
         {4, 5, 6},
-        {7, 8, 9}
+        {7, 8, 20}
     };
     
-    vect2 = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 10}
-    };
 
     Matrix v1 (vect1);
     Matrix v2 (vect2);
