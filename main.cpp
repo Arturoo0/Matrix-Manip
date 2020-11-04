@@ -33,5 +33,8 @@ int main(){
     Matrix v3 = op::add(v1, v2);
     v3.printMatrix();
 
+    Matrix v4 = op::subtract(v1, v2);
+    v4.printMatrix();
+
     return 0;
 }
