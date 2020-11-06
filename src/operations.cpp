@@ -33,8 +33,6 @@ namespace op {
             for (int offset = 0; offset < m2.matrix.size(); offset++){
                 float sum = 0;
                 for (int c = 0; c < m2.matrix[r].size(); c++){
-                    std::cout << "m1 - " << r << " " << c << " " << std::endl;
-                    std::cout << "m2 - " << c << " " << r + offset << " " << std::endl;
                     sum += (m1.matrix[r][c] * m2.matrix[c][offset]);
                 }
                 newCol.push_back(sum);
