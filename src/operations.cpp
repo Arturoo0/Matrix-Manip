@@ -31,7 +31,7 @@ namespace op {
         for (int r = 0; r < m1.matrix.size(); r++){
             std::vector<double> newCol;
             for (int offset = 0; offset < m2.matrix.size(); offset++){
-                float sum = 0;
+                double sum = 0;
                 for (int c = 0; c < m2.matrix[r].size(); c++){
                     sum += (m1.matrix[r][c] * m2.matrix[c][offset]);
                 }
