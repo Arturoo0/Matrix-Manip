@@ -21,10 +21,13 @@ int main(){
     Matrix v1 (vect1);
     Matrix v2 (vect2);
 
+    std::cout << "Original - - -" << std::endl;
     v1.printMatrix();
-    v2.printMatrix();
+    v2.printMatrix(false);
+    std::cout << "- - -" << std::endl;
 
-    std::cout << v1.getShape()[0] << " " << v1.getShape()[1] << std::endl;
+    Matrix v3 = op::multiply(v1, v2);
+    v3.printMatrix();
 
     return 0;
 }

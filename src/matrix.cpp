@@ -34,12 +34,12 @@ int Matrix::getCols(){
     return cols;
 }
 
-void Matrix::printMatrix(){
+void Matrix::printMatrix(bool newLine){
     for (int r = 0; r < matrix.size(); r++){
         for (int c = 0; c < matrix[r].size(); c++){
             std::cout << matrix[r][c] << " "; 
         }
         std::cout << std::endl;
     }
-    std::cout << std::endl;
+    if (newLine) std::cout << std::endl;
 }
