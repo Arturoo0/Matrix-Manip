@@ -21,7 +21,7 @@ namespace op {
         }
         return Matrix(vec);
     }
-    
+
     Matrix add(Matrix &m1, Matrix &m2){
         return addOrSubtract(m1, m2, '+');
     }
@@ -29,4 +29,5 @@ namespace op {
     Matrix subtract(Matrix &m1, Matrix &m2){
         return addOrSubtract(m1, m2, '-');
     }
+
 }
