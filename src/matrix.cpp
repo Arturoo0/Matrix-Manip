@@ -5,6 +5,13 @@ Matrix::Matrix(std::vector<std::vector<double>> &vector){
     computeSize(matrix);
 }
 
+std::array<int, 2> Matrix::getShape(){
+    std::array<int, 2> shape; 
+    shape[0] = rows;
+    shape[1] = cols;
+    return shape;
+}
+
 void Matrix::computeSize(std::vector<std::vector<double>> &vector){
     rows = vector.size();
     if (rows == 0) cols = 0;
@@ -29,7 +36,7 @@ int Matrix::getCols(){
 
 void Matrix::printMatrix(){
     for (int r = 0; r < matrix.size(); r++){
-        for (int c = 0; c < matrix.size(); c++){
+        for (int c = 0; c < matrix[r].size(); c++){
             std::cout << matrix[r][c] << " "; 
         }
         std::cout << std::endl;

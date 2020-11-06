@@ -22,6 +22,10 @@ namespace op {
         return Matrix(vec);
     }
 
+    void multiply(Matrix &m1, Matrix &m2){
+        return;
+    }
+
     Matrix add(Matrix &m1, Matrix &m2){
         return addOrSubtract(m1, m2, '+');
     }

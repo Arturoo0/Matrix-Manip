@@ -8,8 +8,7 @@ int main(){
 
     std::vector<std::vector<double> > vect1 = {
         {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
+        {4, 5, 6}
     };
     
     std::vector<std::vector<double> > vect2 = {
@@ -25,11 +24,7 @@ int main(){
     v1.printMatrix();
     v2.printMatrix();
 
-    Matrix v3 = op::add(v1, v2);
-    v3.printMatrix();
- 
-    Matrix v4 = op::subtract(v1, v2);
-    v4.printMatrix();
+    std::cout << v1.getShape()[0] << " " << v1.getShape()[1] << std::endl;
 
     return 0;
 }
