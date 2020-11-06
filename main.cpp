@@ -1,15 +1,13 @@
 
 #include <iostream>
 #include <vector>
-#include "matrix.hpp"
-#include "operations.hpp"
+#include "./headers/matrix.hpp"
+#include "./headers/operations.hpp"
 
 int main(){
-
     std::vector<std::vector<double> > vect1 = {
         {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
+        {4, 5, 6}
     };
     
     std::vector<std::vector<double> > vect2 = {
@@ -18,18 +16,16 @@ int main(){
         {7, 8, 20}
     };
     
+    Matrix m1 (vect1);
+    Matrix m2 (vect2);
 
-    Matrix v1 (vect1);
-    Matrix v2 (vect2);
+    std::cout << "Original - - -" << std::endl;
+    m1.printMatrix();
+    m2.printMatrix(false);
+    std::cout << "- - -" << std::endl;
 
-    v1.printMatrix();
-    v2.printMatrix();
-
-    Matrix v3 = op::add(v1, v2);
-    v3.printMatrix();
- 
-    Matrix v4 = op::subtract(v1, v2);
-    v4.printMatrix();
+    Matrix m3 = op::multiply(m1, m2);
+    m3.printMatrix();
 
     return 0;
 }
