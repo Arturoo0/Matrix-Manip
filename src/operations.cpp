@@ -2,7 +2,6 @@
 #include ".././headers/operations.hpp"
 
 namespace op {
-
     bool sameShape(Matrix &m1, Matrix &m2){
         if (m1.getRows() != m2.getRows() || m1.getCols() != m2.getCols()) return false; 
         return true;
@@ -29,12 +28,16 @@ namespace op {
     Matrix multiply(Matrix &m1, Matrix &m2){
         std::vector<std::vector<double>> vec; 
         if (!isDefined(m1.getShape(), m2.getShape())) return Matrix(vec);
-        std::cout << "passed" << std::endl;
         for (int r = 0; r < m1.matrix.size(); r++){
             std::vector<double> newCol;
-            float sum = 0;
-            for (int c = 0; c < m1.matrix[r].size(); c++){
-                sum += (m1.matrix[r][c] * m2.matrix[c][r]);
+            for (int offset = 0; offset < m2.matrix.size(); offset++){
+                float sum = 0;
+                for (int c = 0; c < m2.matrix[r].size(); c++){
+                    std::cout << "m1 - " << r << " " << c << " " << std::endl;
+                    std::cout << "m2 - " << c << " " << r + offset << " " << std::endl;
+                    sum += (m1.matrix[r][c] * m2.matrix[c][offset]);
+                }
+                newCol.push_back(sum);
             }
             vec.push_back(newCol);
         }
@@ -48,5 +51,4 @@ namespace op {
     Matrix subtract(Matrix &m1, Matrix &m2){
         return addOrSubtract(m1, m2, '-');
     }
-
 }
