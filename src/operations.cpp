@@ -13,7 +13,11 @@ namespace op {
 
     Matrix addOrSubtract(Matrix &m1, Matrix &m2, char operation){
         std::vector<std::vector<double>> vec; 
-        if (sameShape(m1, m2) == false) return Matrix(vec);
+        try {
+            if (sameShape(m1, m2) == false) throw -1;
+        }catch (int e){
+            std::cout << "Shape mistmatch" << std::endl;
+        }
         for (int r = 0; r < m1.getRows(); r++){
             std::vector<double> newCol;
             for (int c = 0; c < m1.getCols(); c++){
@@ -27,7 +31,11 @@ namespace op {
 
     Matrix multiply(Matrix &m1, Matrix &m2){
         std::vector<std::vector<double>> vec; 
-        if (!isDefined(m1.getShape(), m2.getShape())) return Matrix(vec);
+        try {
+            if (!isDefined(m1.getShape(), m2.getShape())) throw -1;  
+        }catch (int e){
+            std::cout << "Row, Col mismatch" << std::endl;
+        }
         for (int r = 0; r < m1.matrix.size(); r++){
             std::vector<double> newCol;
             for (int offset = 0; offset < m2.matrix.size(); offset++){
