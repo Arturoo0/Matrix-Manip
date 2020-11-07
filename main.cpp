@@ -29,5 +29,9 @@ int main(){
 
     op::transpose(m3);
     m3.printMatrix();
+
+    op::scalarMultiplication(m3, -1);
+    m3.printMatrix();
+
     return 0;
 }
