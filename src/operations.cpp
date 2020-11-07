@@ -42,6 +42,18 @@ namespace op {
         return Matrix(vec);
     }
 
+    void transpose(Matrix &m){
+        std::vector<std::vector<double>> vec;
+        for (int c = 0; c < m.matrix[0].size(); c++){
+            std::vector<double> newCol;
+            for (int r = 0; r < m.matrix.size(); r++){
+                newCol.push_back(m.matrix[r][c]);
+            }
+            vec.push_back(newCol);
+        }
+        m = Matrix (vec);
+    }
+
     Matrix add(Matrix &m1, Matrix &m2){
         return addOrSubtract(m1, m2, '+');
     }
