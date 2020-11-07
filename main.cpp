@@ -27,5 +27,7 @@ int main(){
     Matrix m3 = op::multiply(m1, m2);
     m3.printMatrix();
 
+    op::transpose(m3);
+    m3.printMatrix();
     return 0;
 }
