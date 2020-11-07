@@ -42,6 +42,14 @@ namespace op {
         return Matrix(vec);
     }
 
+    void scalarMultiplication(Matrix &m, double scalar){
+        for (int r = 0; r < m.matrix.size(); r++){
+            for (int c = 0; c < m.matrix[r].size(); c++){
+                m.matrix[r][c] *= scalar;
+            }
+        }
+    }
+
     void transpose(Matrix &m){
         std::vector<std::vector<double>> vec;
         for (int c = 0; c < m.matrix[0].size(); c++){
